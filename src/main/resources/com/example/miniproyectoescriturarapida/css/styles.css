@@ -1,0 +1,64 @@
+/* Background color*/
+.root {
+    -fx-background-color: #0F1420;
+
+}
+
+.label, .button, .text-field {
+    -fx-font-family: "Segoe UI";
+}
+.label {
+    -fx-text-fill: #E6E9F0;
+}
+.button {
+    -fx-background-color: rgba(255, 255, 255, 0.06);
+    -fx-background-insets: 0;
+    -fx-background-radius: 6;
+    -fx-border-color: rgba(255, 255, 255, 0.25);
+    -fx-border-width: 1;
+    -fx-border-radius: 6;
+    -fx-text-fill: #E6E9F0;
+    -fx-cursor: hand;
+}
+.button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.18);
+    -fx-border-color: rgba(255, 255, 255, 0.6);
+}
+.text-field {
+    -fx-background-color: rgba(255, 255, 255, 0.06);
+    -fx-background-insets: 0;
+    -fx-background-radius: 6;
+    -fx-border-color: rgba(255, 255, 255, 0.25);
+    -fx-border-width: 1;
+    -fx-border-radius: 6;
+    -fx-text-fill: #E6E9F0;
+    -fx-highlight-fill: rgba(255, 255, 255, 0.3);
+    -fx-highlight-text-fill: #FFFFFF;
+}
+
+.text-field:focused {
+    -fx-background-color: rgba(255, 255, 255, 0.10);
+    -fx-border-color: rgba(255, 255, 255, 0.6);
+}
+/* Feedback states: the controller adds/removes these style classes */
+.text-field.correct,
+.text-field.correct:focused {
+    -fx-border-color: #4ADE80;
+    -fx-border-width: 2;
+    -fx-effect: dropshadow(gaussian, #4ADE80, 15, 0.4, 0, 0);
+}
+
+.text-field.incorrect,
+.text-field.incorrect:focused {
+    -fx-border-color: #F87171;
+    -fx-border-width: 2;
+    -fx-effect: dropshadow(gaussian, #F87171, 15, 0.4, 0, 0);
+}
+
+.label.correct {
+    -fx-text-fill: #4ADE80;
+}
+
+.label.incorrect {
+    -fx-text-fill: #F87171;
+}
