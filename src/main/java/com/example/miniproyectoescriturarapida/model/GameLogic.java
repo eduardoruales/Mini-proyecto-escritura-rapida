@@ -2,7 +2,6 @@ package com.example.miniproyectoescriturarapida.model;
 
 public class GameLogic {
 
-
     private static final int INITIAL_TIME_SECONDS = 20;
     private static final int REDUCE_TIME_LEVELS = 5;
     private static final int REDUCE_TIME_SECOND = 2;
@@ -26,5 +25,12 @@ public class GameLogic {
 
     public void advanceLevel() {
         currentLevel++;
+    }
+
+    public int getTimeForCurrentLevel(){
+        int completedLevels = currentLevel - 1;
+        int reductions = completedLevels / REDUCE_TIME_LEVELS;
+        int time = INITIAL_TIME_SECONDS - (reductions * REDUCE_TIME_SECOND);
+        return Math.max(time, MIN_TIME_SECONDS);
     }
 }
