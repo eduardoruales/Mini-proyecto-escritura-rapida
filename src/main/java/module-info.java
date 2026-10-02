@@ -1,8 +1,8 @@
-module com.example.miniproyectoescriturarapida {
+module miniproyectoescriturarapida {
     requires javafx.controls;
     requires javafx.fxml;
 
 
-    opens com.example.miniproyectoescriturarapida to javafx.fxml;
-    exports com.example.miniproyectoescriturarapida;
+    opens miniproyectoescriturarapida to javafx.fxml;
+    exports miniproyectoescriturarapida;
 }
