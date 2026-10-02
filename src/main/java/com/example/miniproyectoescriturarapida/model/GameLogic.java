@@ -27,6 +27,10 @@ public class GameLogic {
         currentLevel++;
     }
 
+    public int getCurrentLevel() {
+        return currentLevel;
+    }
+
     public int getTimeForCurrentLevel(){
         int completedLevels = currentLevel - 1;
         int reductions = completedLevels / REDUCE_TIME_LEVELS;
