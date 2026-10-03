@@ -10,20 +10,26 @@
 .label {
     -fx-text-fill: #E6E9F0;
 }
-.button {
+.button, .button:focused, .button:default, .button:armed {
+    -fx-font-size: 20px !important;
+    -fx-font-family: "Segoe UI";
+    -fx-font-weight: normal;
     -fx-background-color: rgba(255, 255, 255, 0.06);
     -fx-background-insets: 0;
     -fx-background-radius: 6;
     -fx-border-color: rgba(255, 255, 255, 0.25);
     -fx-border-width: 1;
     -fx-border-radius: 6;
-    -fx-text-fill: #E6E9F0;
+    -fx-text-fill: #E6E9F0 !important;
     -fx-cursor: hand;
+    -fx-effect: null;
 }
 .button:hover {
-    -fx-background-color: rgba(255, 255, 255, 0.18);
-    -fx-border-color: rgba(255, 255, 255, 0.6);
+    -fx-font-size: 20px !important;
+    -fx-border-color: #7DD3FC;
+    -fx-border-width: 1;
 }
+
 .text-field {
     -fx-background-color: rgba(255, 255, 255, 0.06);
     -fx-background-insets: 0;
