@@ -4,5 +4,6 @@ module miniproyectoescriturarapida {
 
 
     opens miniproyectoescriturarapida to javafx.fxml;
+    opens miniproyectoescriturarapida.view to javafx.fxml;
     exports miniproyectoescriturarapida;
 }
