@@ -37,22 +37,22 @@ escritura, además de un resumen final con niveles completados y tiempo restante
 ## Capturas de pantalla
 
 ### Menú principal
-![Menú principal](docs/screenshots/menu.png)
+![Menú principal](screenshots/menu.png)
 
 ### Partida en curso
-![Partida en curso](docs/screenshots/game.png)
+![Partida en curso](screenshots/game.png)
 
 ### Respuesta correcta
-![Respuesta correcta](docs/screenshots/game-correct.png)
+![Respuesta correcta](screenshots/game-correct.png)
 
 ### Respuesta incorrecta
-![Respuesta incorrecta](docs/screenshots/game-incorrect.png)
+![Respuesta incorrecta](screenshots/game-incorrect.png)
 
 ### Resumen de partida
-![Resumen de partida](docs/screenshots/summary.png)
+![Resumen de partida](screenshots/summary.png)
 
 ### Instrucciones
-![Instrucciones](docs/screenshots/instructions.png)
+![Instrucciones](screenshots/instructions.png)
 
 ## Decisiones de diseño (UX)
 

@@ -170,7 +170,7 @@ public class GameController {
             SummaryController.lastResult = result;
             SummaryController.lastLevels = levelsCompleted;
             SummaryController.lastRemaining = remainingSeconds;
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("view/summary-view.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/miniproyectoescriturarapida/view/summary-view.fxml"));
             Parent root = loader.load();
             Stage stage = (Stage) submitButton.getScene().getWindow();
             stage.setScene(new Scene(root, 800, 600));

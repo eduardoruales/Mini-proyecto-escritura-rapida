@@ -23,7 +23,7 @@ public class MenuController {
      */
     @FXML
     protected void onStartButtonClick() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("view/game-view.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/miniproyectoescriturarapida/view/game-view.fxml"));
         Parent root = loader.load();
         Stage stage = (Stage) startButton.getScene().getWindow();
         stage.setScene(new Scene(root, 800, 600));

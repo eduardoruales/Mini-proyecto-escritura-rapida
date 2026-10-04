@@ -44,7 +44,7 @@ public class SummaryController {
      */
     @FXML
     protected void onRestartButtonClick() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("view/game-view.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/miniproyectoescriturarapida/view/game-view.fxml"));
         Parent root = loader.load();
         Stage stage = (Stage) restartButton.getScene().getWindow();
         stage.setScene(new Scene(root, 800, 600));
@@ -55,7 +55,7 @@ public class SummaryController {
      */
     @FXML
     protected void onMenuButtonClick() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("view/start-view.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/miniproyectoescriturarapida/view/start-view.fxml"));
         Parent root = loader.load();
         Stage stage = (Stage) restartButton.getScene().getWindow();
         stage.setScene(new Scene(root, 800, 600));
