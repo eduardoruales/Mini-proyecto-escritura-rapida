@@ -7,11 +7,12 @@
 <?import javafx.scene.text.Font?>
 
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" spacing="25.0" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="miniproyectoescriturarapida.InstructionsController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" spacing="25.0" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="miniproyectoescriturarapida.controller.InstructionsController">
    <padding>
       <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
    </padding>
    <children>
+      <!-- Título de la ventana de instrucciones -->
       <Label text="Instrucciones">
          <font>
             <Font size="36.0" />
@@ -20,11 +21,13 @@
             <Insets bottom="30.0" />
          </VBox.margin>
       </Label>
+      <!-- Texto explicativo de cómo jugar -->
       <Label text="Escribe la palabra que aparece en pantalla antes de que el tiempo llegue a cero. Presiona Enter o el botón Validar para comprobar tu respuesta. Cada palabra correcta sube de nivel. El tiempo baja cada 5 niveles. Si te equivocas o se acaba el tiempo, pierdes una vida." wrapText="true">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
+      <!-- Botón para cerrar la ventana de instrucciones -->
       <Button mnemonicParsing="false" onAction="#onCloseButtonClick" prefHeight="0.0" prefWidth="89.0" text="Cerrar">
          <VBox.margin>
             <Insets top="30.0" />

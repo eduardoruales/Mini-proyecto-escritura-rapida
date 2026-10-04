@@ -9,7 +9,8 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="miniproyectoescriturarapida.GameController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="miniproyectoescriturarapida.controller.GameController">
+   <!-- Barra superior: vidas restantes del jugador -->
    <top>
       <Label fx:id="livesLabel" text="Vidas: 3" BorderPane.alignment="TOP_LEFT">
          <BorderPane.margin>
@@ -20,26 +21,32 @@
          </font>
       </Label>
    </top>
+   <!-- Centro: temporizador, palabra actual, feedback y campo de respuesta -->
    <center>
       <VBox alignment="CENTER" prefHeight="83.0" prefWidth="800.0" spacing="30.0" BorderPane.alignment="CENTER">
          <children>
+            <!-- Cronómetro regresivo del nivel actual -->
             <Label fx:id="timerLabel" text="00:20">
                <font>
                   <Font size="36.0" />
                </font>
             </Label>
+            <!-- Palabra que el jugador debe escribir -->
             <Label fx:id="wordLabel" text="Palabra">
                <font>
                   <Font size="60.0" />
                </font>
             </Label>
+            <!-- Mensajes de resultado ("¡Correcto!", "Incorrecto", etc.) -->
             <Label fx:id="feedbackLabel" minHeight="40.0">
                <font>
                   <Font size="28.0" />
                </font>
             </Label>
+            <!-- Fila con el campo de respuesta y el botón validar -->
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
                <children>
+                  <!-- Campo donde se escribe la palabra (Enter también valida) -->
                   <TextField fx:id="answerField" prefHeight="50.0" prefWidth="400.0">
                      <font>
                         <Font size="24.0" />
@@ -48,6 +55,7 @@
                         <Insets left="135.0" />
                      </HBox.margin>
                   </TextField>
+                  <!-- Botón para comprobar la respuesta -->
                   <Button fx:id="submitButton" mnemonicParsing="false" onAction="#onSubmitButtonClick" prefHeight="50.0" prefWidth="120.0" text="Validar">
                      <font>
                         <Font size="20.0" />
@@ -58,6 +66,7 @@
          </children>
       </VBox>
    </center>
+   <!-- Barra inferior: nivel actual -->
    <bottom>
       <Label fx:id="levelLabel" alignment="BOTTOM_RIGHT" text="Nivel 1" BorderPane.alignment="BOTTOM_RIGHT">
          <BorderPane.margin>

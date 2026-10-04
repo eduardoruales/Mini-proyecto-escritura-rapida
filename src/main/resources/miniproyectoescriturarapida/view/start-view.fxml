@@ -8,13 +8,15 @@
 <?import javafx.scene.text.Font?>
 
 
-<StackPane stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="miniproyectoescriturarapida.MenuController">
+<StackPane stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="miniproyectoescriturarapida.controller.MenuController">
    <children>
+      <!-- Etiqueta de versión en la esquina inferior derecha -->
       <Label alignment="BOTTOM_RIGHT" text="v1.0" StackPane.alignment="BOTTOM_RIGHT">
          <StackPane.margin>
             <Insets bottom="20.0" right="20.0" />
          </StackPane.margin>
       </Label>
+      <!-- Columna vertical centrada con el título y los botones del menú -->
       <VBox alignment="CENTER" prefHeight="600.0" prefWidth="800.0" spacing="40.0" stylesheets="@../css/styles.css">
           <padding>
               <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

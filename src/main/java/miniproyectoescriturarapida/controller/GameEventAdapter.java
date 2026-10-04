@@ -1,4 +1,4 @@
-package miniproyectoescriturarapida;
+package miniproyectoescriturarapida.controller;
 
 /**
  * Adaptador de {@link GameEventListener} con implementaciones vacías.

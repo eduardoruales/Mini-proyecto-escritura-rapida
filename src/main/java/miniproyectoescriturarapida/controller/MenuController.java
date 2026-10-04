@@ -1,11 +1,10 @@
-package miniproyectoescriturarapida;
+package miniproyectoescriturarapida.controller;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -34,14 +33,8 @@ public class MenuController {
      * Muestra un diálogo con las instrucciones del juego.
      */
     @FXML
-    protected void onInstructionsButtonClick() {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Instrucciones");
-        alert.setHeaderText(null);
-        alert.setContentText("Escribe la palabra que aparece en pantalla y presiona Validar.\n" +
-                "Tienes un tiempo límite que se reduce cada 5 niveles.\n" +
-                "Si el tiempo se agota, la partida termina.");
-        alert.showAndWait();
+    protected void onInstructionsButtonClick() throws IOException {
+        new miniproyectoescriturarapida.view.InstructionsView().show();
     }
 
     /**

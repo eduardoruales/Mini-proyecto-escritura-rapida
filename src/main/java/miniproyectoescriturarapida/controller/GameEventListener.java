@@ -1,4 +1,4 @@
-package miniproyectoescriturarapida;
+package miniproyectoescriturarapida.controller;
 
 /**
  * Interfaz de escucha de eventos del juego de escritura rápida.

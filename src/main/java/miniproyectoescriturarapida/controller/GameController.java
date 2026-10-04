@@ -1,4 +1,4 @@
-package miniproyectoescriturarapida;
+package miniproyectoescriturarapida.controller;
 
 import miniproyectoescriturarapida.model.GameLogic;
 import javafx.animation.KeyFrame;

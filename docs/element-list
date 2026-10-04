@@ -1,2 +1,5 @@
 module:miniproyectoescriturarapida
 miniproyectoescriturarapida
+miniproyectoescriturarapida.controller
+miniproyectoescriturarapida.model
+miniproyectoescriturarapida.view

@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html","k":"18"},{"m":"miniproyectoescriturarapida","l":"miniproyectoescriturarapida"}];updateSearchResults();
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html","k":"18"},{"m":"miniproyectoescriturarapida","l":"miniproyectoescriturarapida"},{"m":"miniproyectoescriturarapida","l":"miniproyectoescriturarapida.controller"},{"m":"miniproyectoescriturarapida","l":"miniproyectoescriturarapida.model"},{"m":"miniproyectoescriturarapida","l":"miniproyectoescriturarapida.view"}];updateSearchResults();

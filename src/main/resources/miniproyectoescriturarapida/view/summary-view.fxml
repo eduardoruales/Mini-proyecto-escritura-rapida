@@ -5,29 +5,34 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" spacing="30.0" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="miniproyectoescriturarapida.SummaryController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" spacing="30.0" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="miniproyectoescriturarapida.controller.SummaryController">
    <children>
-      <Label fx:id="resultLabel" text="Fin de la partida">
+      <!-- Título con el resultado final de la partida -->
+       <Label fx:id="resultLabel" text="Fin de la partida">
          <font>
             <Font size="60.0" />
          </font>
       </Label>
-      <Label fx:id="levelsLabel" text="Niveles completados: 0">
+      <!-- Etiqueta con el total de niveles superados -->
+       <Label fx:id="levelsLabel" text="Niveles completados: 0">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="timeLabel" text="Label">
+      <!-- Etiqueta con el tiempo restante del último nivel -->
+       <Label fx:id="timeLabel" text="Label">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Button fx:id="restartButton" mnemonicParsing="false" onAction="#onRestartButtonClick" prefHeight="50.0" prefWidth="250.0" text="Reiniciar">
+      <!-- Botón para reiniciar la partida -->
+       <Button fx:id="restartButton" mnemonicParsing="false" onAction="#onRestartButtonClick" prefHeight="50.0" prefWidth="250.0" text="Reiniciar">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="menuButton" mnemonicParsing="false" onAction="#onMenuButtonClick" prefHeight="50.0" prefWidth="250.0" text="Volver al menú">
+             <!-- Botón para volver al menú principal -->
+       <Button fx:id="menuButton" mnemonicParsing="false" onAction="#onMenuButtonClick" prefHeight="50.0" prefWidth="250.0" text="Volver al menú">
          <font>
             <Font size="20.0" />
          </font>

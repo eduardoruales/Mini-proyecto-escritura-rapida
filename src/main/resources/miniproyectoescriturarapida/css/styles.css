@@ -1,35 +1,47 @@
-/* Background color*/
+/* ============================================================
+   Estilos globales de la aplicación "Escritura Rápida"
+   Aplicado a todas las vistas via stylesheets="@../css/styles.css"
+   ============================================================ */
+
+/* Fondo oscuro general de la raíz de cada escena */
 .root {
     -fx-background-color: #0F1420;
-
 }
 
+/* Fuente base para etiquetas, botones y campos de texto */
 .label, .button, .text-field {
     -fx-font-family: "Segoe UI";
 }
+
+/* Color de texto de todas las etiquetas */
 .label {
     -fx-text-fill: #E6E9F0;
 }
+
+/* Estilo base de todos los botones (incluye estados normales) */
 .button, .button:focused, .button:default, .button:armed {
     -fx-font-size: 20px !important;
     -fx-font-family: "Segoe UI";
     -fx-font-weight: normal;
-    -fx-background-color: rgba(255, 255, 255, 0.06);
+    -fx-background-color: rgba(255, 255, 255, 0.06);  /* fondo blanco translúcido */
     -fx-background-insets: 0;
-    -fx-background-radius: 6;
+    -fx-background-radius: 6;                          /* esquinas redondeadas */
     -fx-border-color: rgba(255, 255, 255, 0.25);
     -fx-border-width: 1;
     -fx-border-radius: 6;
     -fx-text-fill: #E6E9F0 !important;
-    -fx-cursor: hand;
+    -fx-cursor: hand;                                  /* cursor de mano al pasar */
     -fx-effect: null;
 }
+
+/* Resaltado del botón al pasar el cursor (hover) */
 .button:hover {
     -fx-font-size: 20px !important;
-    -fx-border-color: #7DD3FC;
+    -fx-border-color: #7DD3FC;                         /* borde azul claro */
     -fx-border-width: 1;
 }
 
+/* Campo de texto del juego (donde se escribe la palabra) */
 .text-field {
     -fx-background-color: rgba(255, 255, 255, 0.06);
     -fx-background-insets: 0;
@@ -37,16 +49,20 @@
     -fx-border-color: rgba(255, 255, 255, 0.25);
     -fx-border-width: 1;
     -fx-border-radius: 6;
-    -fx-text-fill: #E6E9F0;
-    -fx-highlight-fill: rgba(255, 255, 255, 0.3);
+    -fx-text-fill: #E6E9F0;                           /* color del texto escrito */
+    -fx-highlight-fill: rgba(255, 255, 255, 0.3);     /* color al seleccionar texto */
     -fx-highlight-text-fill: #FFFFFF;
 }
 
+/* Apariencia del campo de texto cuando tiene el foco */
 .text-field:focused {
     -fx-background-color: rgba(255, 255, 255, 0.10);
     -fx-border-color: rgba(255, 255, 255, 0.6);
 }
-/* Feedback states: the controller adds/removes these style classes */
+
+/* ===== Estados de feedback (el controlador agrega/quita estas clases) ===== */
+
+/* Respuesta correcta: borde y brillo verde */
 .text-field.correct,
 .text-field.correct:focused {
     -fx-border-color: #4ADE80;
@@ -54,6 +70,7 @@
     -fx-effect: dropshadow(gaussian, #4ADE80, 15, 0.4, 0, 0);
 }
 
+/* Respuesta incorrecta: borde y brillo rojo */
 .text-field.incorrect,
 .text-field.incorrect:focused {
     -fx-border-color: #F87171;
@@ -61,10 +78,12 @@
     -fx-effect: dropshadow(gaussian, #F87171, 15, 0.4, 0, 0);
 }
 
+/* Etiqueta de feedback en color verde cuando la respuesta es correcta */
 .label.correct {
     -fx-text-fill: #4ADE80;
 }
 
+/* Etiqueta de feedback en color rojo cuando la respuesta es incorrecta */
 .label.incorrect {
     -fx-text-fill: #F87171;
 }
