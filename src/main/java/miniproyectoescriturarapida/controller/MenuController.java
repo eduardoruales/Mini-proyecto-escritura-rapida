@@ -10,8 +10,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 /**
- * Controlador del menú principal (start-view.fxml).
- * Permite iniciar la partida, ver las instrucciones o salir.
+ * Controller for the main menu (start-view.fxml). Lets the user start a
+ * game, view the instructions, or exit.
  */
 public class MenuController {
 
@@ -19,29 +19,29 @@ public class MenuController {
     private javafx.scene.control.Button startButton;
 
     /**
-     * Carga la vista principal del juego al pulsar "Iniciar partida".
+     * Loads the main game view when "Iniciar partida" is clicked.
      */
     @FXML
     protected void onStartButtonClick() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/miniproyectoescriturarapida/view/game-view.fxml"));
-        Parent root = loader.load();
-        Stage stage = (Stage) startButton.getScene().getWindow();
-        stage.setScene(new Scene(root, 800, 600));
+        Parent root = loader.load(); // Cargar la vista del juego
+        Stage stage = (Stage) startButton.getScene().getWindow(); // Ventana actual
+        stage.setScene(new Scene(root, 800, 600)); // Reemplazar el contenido por el juego
     }
 
     /**
-     * Muestra un diálogo con las instrucciones del juego.
+     * Opens the instructions window.
      */
     @FXML
     protected void onInstructionsButtonClick() throws IOException {
-        new miniproyectoescriturarapida.view.InstructionsView().show();
+        new miniproyectoescriturarapida.view.InstructionsView().show(); // Abrir ventana modal de instrucciones
     }
 
     /**
-     * Cierra la aplicación al pulsar "Salir".
+     * Closes the application when "Salir" is clicked.
      */
     @FXML
     protected void onExitButtonClick() {
-        Platform.exit();
+        Platform.exit(); // Finalizar la aplicación por completo
     }
 }

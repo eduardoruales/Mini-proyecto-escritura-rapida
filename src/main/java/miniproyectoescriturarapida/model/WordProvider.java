@@ -4,25 +4,25 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * Provee palabras aleatorias para el juego de escritura rápida.
+ * Provides random words for the typing game.
  */
 public class WordProvider {
 
-    private final List<String> words = List.of("JavaFX", "Univalle", "Programación", "Estudio", "Computador", "Tecnología");
-    private final Random random = new Random();
-    private String lastWord;
+    private final List<String> words = List.of("JavaFX", "Univalle", "Programación", "Estudio", "Computador", "Tecnología"); // Lista fija de palabras
+    private final Random random = new Random(); // Generador de números aleatorios
+    private String lastWord; // Última palabra entregada (para no repetirla)
 
     /**
-     * Retorna una palabra aleatoria distinta (en lo posible) de la anterior.
+     * Returns a random word, different (when possible) from the previous one.
      *
-     * @return nueva palabra
+     * @return a new word
      */
     public String nextWord() {
         String word;
         do {
-            word = words.get(random.nextInt(words.size()));
-        } while (word.equals(lastWord) && words.size() > 1);
-        lastWord = word;
+            word = words.get(random.nextInt(words.size())); // Elegir una posición al azar
+        } while (word.equals(lastWord) && words.size() > 1); // Repetir si es igual a la anterior
+        lastWord = word; // Guardar la palabra actual
         return word;
     }
 }

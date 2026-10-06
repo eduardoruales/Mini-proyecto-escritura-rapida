@@ -1,108 +1,106 @@
 package miniproyectoescriturarapida.model;
 
 /**
- * Contiene la lógica principal del juego de escritura rápida.
+ * Core game logic for the typing game.
  * <p>
- * El jugador debe escribir correctamente la palabra mostrada antes de que se
- * agote el tiempo. Cada acierto sube de nivel y cada 5 niveles el tiempo
- * disponible se reduce en 2 segundos (mínimo 2 segundos). Cuenta con 3 vidas;
- * escribir mal o agotar el tiempo resta una vida. Cuando no quedan vidas,
- * la partida termina.
+ * The player must type the displayed word before the timer runs out. Every
+ * correct answer advances one level and every 5 levels the available time is
+ * reduced by 2 seconds (minimum 2 seconds). The player starts with 3 lives;
+ * a wrong answer or a timeout costs one life. When no lives remain, the
+ * game ends.
  * </p>
  */
 public class GameLogic {
 
-    /** Tiempo inicial por nivel, en segundos. */
+    /** Initial time per level, in seconds. */
     private static final int INITIAL_TIME_SECONDS = 20;
-    /** Cada cuántos niveles completados se reduce el tiempo. */
+    /** How many completed levels trigger a time reduction. */
     private static final int REDUCE_TIME_LEVELS = 5;
-    /** Segundos que se reducen cada {@value #REDUCE_TIME_LEVELS} niveles. */
+    /** Seconds reduced every {@value #REDUCE_TIME_LEVELS} levels. */
     private static final int REDUCE_TIME_SECOND = 2;
-    /** Tiempo mínimo permitido por nivel, en segundos. */
+    /** Minimum allowed time per level, in seconds. */
     private static final int MIN_TIME_SECONDS = 2;
-    /** Vidas con las que inicia el jugador. */
+    /** Lives the player starts with. */
     private static final int INITIAL_LIVES = 3;
 
-    private final WordProvider wordProvider = new WordProvider();
-    private String currentWord = wordProvider.nextWord();
-    private int currentLevel = 1;
-    private int lives = INITIAL_LIVES;
+    private final WordProvider wordProvider = new WordProvider(); // Fuente de palabras
+    private String currentWord = wordProvider.nextWord(); // Palabra que se muestra ahora
+    private int currentLevel = 1; // Nivel actual, empieza en 1
+    private int lives = INITIAL_LIVES; // Vidas del jugador
 
     /**
-     * Verifica si el texto escrito coincide con la palabra actual.
+     * Checks whether the typed text matches the current word.
      *
-     * @param textoEscrito texto ingresado por el jugador
-     * @return {@code true} si la respuesta es correcta
+     * @param textoEscrito text entered by the player
+     * @return {@code true} if the answer is correct
      */
     public boolean esRespuestaCorrecta(String textoEscrito) {
-        return currentWord.equals(textoEscrito);
+        return currentWord.equals(textoEscrito); // Compara el texto con la palabra actual
     }
 
-    /** Avanza a una nueva palabra aleatoria. */
+    /** Advances to a new random word. */
     public void avanzarPalabra() {
-        currentWord = wordProvider.nextWord();
+        currentWord = wordProvider.nextWord(); // Pedir una nueva palabra al proveedor
     }
 
     /**
-     * Obtiene la palabra que el jugador debe escribir.
+     * Gets the word the player must type.
      *
-     * @return palabra actual
+     * @return the current word
      */
     public String getCurrentWord() {
         return currentWord;
     }
 
-    /** Sube un nivel al juego. */
+    /** Advances the game by one level. */
     public void advanceLevel() {
-        currentLevel++;
+        currentLevel++; // Incrementar el contador de nivel
     }
 
     /**
-     * Obtiene el nivel actual del juego.
+     * Gets the current game level.
      *
-     * @return nivel actual (empieza en 1)
+     * @return the current level (starts at 1)
      */
     public int getCurrentLevel() {
         return currentLevel;
     }
 
     /**
-     * Calcula el tiempo disponible para el nivel actual.
-     * Se reducen 2 segundos cada 5 niveles, sin bajar de 2 segundos.
+     * Computes the available time for the current level. 2 seconds are
+     * reduced every 5 levels, never going below 2 seconds.
      *
-     * @return segundos disponibles para este nivel
+     * @return available seconds for this level
      */
     public int getTimeForCurrentLevel() {
-        int completedLevels = currentLevel - 1;
-        int reductions = completedLevels / REDUCE_TIME_LEVELS;
-        int time = INITIAL_TIME_SECONDS - (reductions * REDUCE_TIME_SECOND);
-        return Math.max(time, MIN_TIME_SECONDS);
+        int completedLevels = currentLevel - 1;              // Niveles ya superados
+        int reductions = completedLevels / REDUCE_TIME_LEVELS; // Cada 5 niveles, una reducción
+        int time = INITIAL_TIME_SECONDS - (reductions * REDUCE_TIME_SECOND); // Tiempo base menos reducción
+        return Math.max(time, MIN_TIME_SECONDS);             // Nunca bajar del mínimo
     }
 
-    /**
-     * Resta una vida al jugador.
-     */
+    /** Removes one life from the player. */
     public void perderVida() {
         if (lives > 0) {
-            lives--;
+            lives--; // Restar una vida sin bajar de cero
         }
     }
 
     /**
-     * Obtiene las vidas restantes.
+     * Gets the remaining lives.
      *
-     * @return número de vidas (0 a 3)
+     * @return number of lives (0 to 3)
      */
     public int getLives() {
         return lives;
     }
 
     /**
-     * Indica si la partida terminó por falta de vidas.
+     * Indicates whether the game ended because no lives remain.
      *
-     * @return {@code true} si no quedan vidas
+     * @return {@code true} if no lives are left
      */
     public boolean isGameOver() {
-        return lives <= 0;
+        return lives <= 0; // Verdadero cuando no quedan vidas
     }
 }

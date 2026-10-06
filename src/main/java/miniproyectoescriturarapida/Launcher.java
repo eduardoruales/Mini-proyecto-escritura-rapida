@@ -3,16 +3,16 @@ package miniproyectoescriturarapida;
 import javafx.application.Application;
 
 /**
- * Lanzador principal de la aplicación. Permite arrancar la
- * {@link HelloApplication} como una aplicación JavaFX.
+ * Main application launcher. Starts {@link HelloApplication} as a JavaFX
+ * application.
  */
 public class Launcher {
     /**
-     * Punto de entrada de la aplicación.
+     * Application entry point.
      *
-     * @param args argumentos de línea de comandos
+     * @param args command-line arguments
      */
     public static void main(String[] args) {
-        Application.launch(HelloApplication.class, args);
+        Application.launch(HelloApplication.class, args); // Arrancar la app JavaFX
     }
 }

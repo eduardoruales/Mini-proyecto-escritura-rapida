@@ -8,21 +8,21 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 /**
- * Punto de entrada de la aplicación JavaFX del juego de escritura rápida.
- * Carga la vista del menú principal.
+ * Entry point of the JavaFX typing game application. Loads the main menu
+ * view.
  */
 public class HelloApplication extends Application {
     /**
-     * Inicia la interfaz gráfica principal.
+     * Starts the main graphical interface.
      *
-     * @param stage ventana principal de la aplicación
+     * @param stage main application window
      */
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("view/start-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 800, 600);
+        Scene scene = new Scene(fxmlLoader.load(), 800, 600); // Construir la escena del menú
         stage.setTitle("Escritura Rápida");
         stage.setScene(scene);
-        stage.show();
+        stage.show(); // Mostrar la ventana
     }
 }

@@ -6,17 +6,17 @@ import javafx.scene.Node;
 import javafx.stage.Stage;
 
 /**
- * Controlador de la ventana de instrucciones (instructions-view.fxml).
- * Muestra cómo jugar y permite cerrar la ventana.
+ * Controller for the instructions window (instructions-view.fxml). Shows
+ * how to play and lets the user close the window.
  */
 public class InstructionsController {
 
     /**
-     * Cierra la ventana de instrucciones.
+     * Closes the instructions window.
      */
     @FXML
     protected void onCloseButtonClick(ActionEvent event) {
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.close();
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow(); // Ventana del botón
+        stage.close(); // Cerrarla
     }
 }

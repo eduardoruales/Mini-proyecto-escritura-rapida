@@ -1,11 +1,11 @@
 package miniproyectoescriturarapida.controller;
 
 /**
- * Adaptador de {@link GameEventListener} con implementaciones vacías.
- * Permite a las subclases sobrescribir solo los eventos de interés.
- *
- * <p>Los métodos de la interfaz se dejan vacíos intencionalmente: la subclase
- * que los necesite los sobrescribe.</p>
+ * Adapter for {@link GameEventListener} with empty implementations.
+ * Lets subclasses override only the events they care about.
+ * <p>
+ * Interface methods are intentionally left empty: the subclass that needs
+ * them overrides them.</p>
  */
 public abstract class GameEventAdapter implements GameEventListener {
 

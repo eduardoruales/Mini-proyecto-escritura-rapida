@@ -11,17 +11,17 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 /**
- * Controlador de la pantalla de resumen final (summary-view.fxml).
- * Muestra el resultado de la partida, los niveles completados y el tiempo
- * restante, y permite reiniciar o volver al menú.
+ * Controller for the game-over summary screen (summary-view.fxml). Shows
+ * the game result, completed levels, and remaining time, and lets the
+ * player restart or go back to the menu.
  */
 public class SummaryController {
 
-    /** Mensaje con el resultado final de la partida. */
+    /** Final game result message. */
     public static String lastResult = "Fin de la partida";
-    /** Niveles completados en la última partida. */
+    /** Levels completed in the last game. */
     public static int lastLevels = 0;
-    /** Tiempo restante del último nivel (si aplica). */
+    /** Time remaining on the last level (if applicable). */
     public static int lastRemaining = 0;
 
     @FXML private Label resultLabel;
@@ -30,34 +30,34 @@ public class SummaryController {
     @FXML private Button restartButton;
 
     /**
-     * Inicializa las etiquetas del resumen con los datos de la última partida.
+     * Initializes the summary labels with the last game's data.
      */
     @FXML
     public void initialize() {
-        resultLabel.setText(lastResult);
-        levelsLabel.setText("Niveles completados: " + lastLevels);
-        timeLabel.setText("Tiempo restante: " + lastRemaining + " s");
+        resultLabel.setText(lastResult);                          // Resultado final
+        levelsLabel.setText("Niveles completados: " + lastLevels); // Niveles superados
+        timeLabel.setText("Tiempo restante: " + lastRemaining + " s"); // Tiempo que quedó
     }
 
     /**
-     * Reinicia el juego volviendo a la vista principal del juego.
+     * Restarts the game by loading the main game view.
      */
     @FXML
     protected void onRestartButtonClick() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/miniproyectoescriturarapida/view/game-view.fxml"));
         Parent root = loader.load();
         Stage stage = (Stage) restartButton.getScene().getWindow();
-        stage.setScene(new Scene(root, 800, 600));
+        stage.setScene(new Scene(root, 800, 600)); // Volver a la escena del juego
     }
 
     /**
-     * Regresa a la pantalla de inicio del juego.
+     * Returns to the game start screen.
      */
     @FXML
     protected void onMenuButtonClick() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/miniproyectoescriturarapida/view/start-view.fxml"));
         Parent root = loader.load();
         Stage stage = (Stage) restartButton.getScene().getWindow();
-        stage.setScene(new Scene(root, 800, 600));
+        stage.setScene(new Scene(root, 800, 600)); // Volver a la escena del menú
     }
 }

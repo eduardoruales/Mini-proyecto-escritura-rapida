@@ -1,41 +1,41 @@
 package miniproyectoescriturarapida.controller;
 
 /**
- * Interfaz de escucha de eventos del juego de escritura rápida.
- * Las clases que quieran reaccionar a los eventos del juego deben
- * implementar esta interfaz (o extender {@link GameEventAdapter}).
+ * Listener interface for the typing game's events. Classes that want to
+ * react to game events should implement this interface (or extend
+ * {@link GameEventAdapter}).
  */
 public interface GameEventListener {
 
     /**
-     * Se invoca cuando el jugador escribe correctamente la palabra.
+     * Called when the player types the word correctly.
      *
-     * @param newLevel nuevo nivel alcanzado
+     * @param newLevel the newly reached level
      */
     void onCorrectAnswer(int newLevel);
 
     /**
-     * Se invoca cuando el jugador escribe una palabra incorrecta.
+     * Called when the player types an incorrect word.
      */
     void onIncorrectAnswer();
 
     /**
-     * Se invoca cuando se agota el tiempo de un nivel.
+     * Called when the level timer runs out.
      */
     void onTimeOut();
 
     /**
-     * Se invoca cuando el jugador sube de nivel.
+     * Called when the player advances to a new level.
      *
-     * @param level nuevo nivel
+     * @param level the new level
      */
     void onLevelUp(int level);
 
     /**
-     * Se invoca cuando la partida termina.
+     * Called when the game ends.
      *
-     * @param levelsCompleted total de niveles completados
-     * @param remainingSeconds tiempo restante del último nivel (si aplica)
+     * @param levelsCompleted total levels completed
+     * @param remainingSeconds time left on the last level (if applicable)
      */
     void onGameOver(int levelsCompleted, int remainingSeconds);
 }
