@@ -4,9 +4,9 @@ tiempo, si aciertas aumenta el nivel y la dificultad. En caso de fallar o que se
 vidas o perderas la partida.
 
 ## Integrantes del equipo 
-- Eduardo Ruales 2538441
-- Juan David Silva 2535562
-- Juan Sebastian Sanclemente 2535873
+- Eduardo Ruales - 2538441
+- Juan David Silva - 2535562
+- Juan Sebastian Sanclemente - 2535873
 - FPOE Grupo #80 2026-II
 
 ## Tecnologias utilizadas

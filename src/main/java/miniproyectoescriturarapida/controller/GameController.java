@@ -110,12 +110,12 @@ public class GameController {
         updateTimerLabel();  // Actualizar la etiqueta del tiempo
         if (timeLeft <= 0) { // Si se acabó el tiempo
             timer.stop();    // Detener el cronómetro
-            gameLogic.perderVida(); // El jugador pierde una vida
+            gameLogic.lostLife(); // El jugador pierde una vida
             eventListener.onTimeOut(); // Mostrar mensaje "¡Tiempo agotado!"
             if (gameLogic.isGameOver()) { // Si ya no quedan vidas
                 eventListener.onGameOver(gameLogic.getCurrentLevel() - 1, 0); // Terminar partida
             } else {
-                gameLogic.avanzarPalabra(); // Nueva palabra
+                gameLogic.nextWord(); // Nueva palabra
                 startRound();               // Reiniciar la ronda
             }
         }
@@ -144,14 +144,14 @@ public class GameController {
         answerField.getStyleClass().removeAll("correct", "incorrect"); // Quitar estilos anteriores
         feedbackLabel.getStyleClass().removeAll("correct", "incorrect");
 
-        if (gameLogic.esRespuestaCorrecta(answer)) { // Si la respuesta es correcta
+        if (gameLogic.itsCorrectAnswer(answer)) { // Si la respuesta es correcta
             gameLogic.advanceLevel();                // Subir de nivel
-            gameLogic.avanzarPalabra();              // Pasar a la siguiente palabra
+            gameLogic.nextWord();              // Pasar a la siguiente palabra
             eventListener.onCorrectAnswer(gameLogic.getCurrentLevel()); // Mensaje positivo
             eventListener.onLevelUp(gameLogic.getCurrentLevel());       // Actualizar nivel en pantalla
             startRound();                            // Iniciar la nueva ronda
         } else {                                     // Si la respuesta es incorrecta
-            gameLogic.perderVida();                  // Restar una vida
+            gameLogic.lostLife();                  // Restar una vida
             answerField.getStyleClass().add("incorrect"); // Pintar el campo en rojo
             answerField.setText("");                 // Limpiar el campo
             eventListener.onIncorrectAnswer();       // Mostrar mensaje de error

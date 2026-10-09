@@ -34,12 +34,12 @@ public class GameLogic {
      * @param textoEscrito text entered by the player
      * @return {@code true} if the answer is correct
      */
-    public boolean esRespuestaCorrecta(String textoEscrito) {
+    public boolean itsCorrectAnswer(String textoEscrito) {
         return currentWord.equals(textoEscrito); // Compara el texto con la palabra actual
     }
 
     /** Advances to a new random word. */
-    public void avanzarPalabra() {
+    public void nextWord() {
         currentWord = wordProvider.nextWord(); // Pedir una nueva palabra al proveedor
     }
 
@@ -76,11 +76,14 @@ public class GameLogic {
         int completedLevels = currentLevel - 1;              // Niveles ya superados
         int reductions = completedLevels / REDUCE_TIME_LEVELS; // Cada 5 niveles, una reducción
         int time = INITIAL_TIME_SECONDS - (reductions * REDUCE_TIME_SECOND); // Tiempo base menos reducción
+
+        System.out.println("Nivel: " + currentLevel + " -> tiempo calculado: " + Math.max(time, MIN_TIME_SECONDS));
+
         return Math.max(time, MIN_TIME_SECONDS);             // Nunca bajar del mínimo
     }
 
     /** Removes one life from the player. */
-    public void perderVida() {
+    public void lostLife() {
         if (lives > 0) {
             lives--; // Restar una vida sin bajar de cero
         }
