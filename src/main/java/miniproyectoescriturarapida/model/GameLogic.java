@@ -76,9 +76,6 @@ public class GameLogic {
         int completedLevels = currentLevel - 1;              // Niveles ya superados
         int reductions = completedLevels / REDUCE_TIME_LEVELS; // Cada 5 niveles, una reducción
         int time = INITIAL_TIME_SECONDS - (reductions * REDUCE_TIME_SECOND); // Tiempo base menos reducción
-
-        System.out.println("Nivel: " + currentLevel + " -> tiempo calculado: " + Math.max(time, MIN_TIME_SECONDS));
-
         return Math.max(time, MIN_TIME_SECONDS);             // Nunca bajar del mínimo
     }
 
